@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles Links-->
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Script -->
+    <script defer src="./componentaction/autoScolling.js"></script>
+    <title>Angelly's Portfolio</title>
+  </head>
+  <body>
+    <nav class="nav-header">
+      <a href="#" class="logo-header">Angelly</a>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <button for="menu-toggle" id="dropBtn" class="dropdown-btn">
+          <img
+            src="./assets/logo/hamburger-menu.svg"
+            alt="The hamburger menu button of Angelly's Portfolio page"
+          />
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Skills</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="hero-section">
+        <article class="bio-article">
+          <div id="left-bio">
+            <p>Hi, I'm</p>
+            <h1>Angelly Nguyen</h1>
+            <h2>Software Developer</h2>
+            <p>
+              Software Developer building modern web experiences with a strong
+              focus on clean UI/UX.
+            </p>
+          </div>
+          <div id="right-bio">
+            <img
+              src="./assets/images/angelly-portrait.jpeg"
+              alt="Angelly's Portrait"
+            />
+          </div>
+        </article>
+        <div id="cta-contact-btns">
+          <button class="cta-btn">View My Work</button>
+          <button class="cta-btn">Contact Me</button>
+        </div>
+        <div id="angelly-social-links">
+          <a
+            class="social-link"
+            href="https://www.linkedin.com/in/duyen-dk-nguyen/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="social-img"
+              src="./assets/images/linkedin.png"
+              alt="Linkedin of Angelly"
+          /></a>
+          <a
+            class="social-link"
+            href="https://github.com/kyduyennguyen"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="social-img"
+              src="./assets/images/github.png"
+              alt="Github Channel of Angelly"
+          /></a>
+          <a
+            class="social-link"
+            href="https://www.youtube.com/channel/UCYmO6rZYrL7GKY2WAYrFTAg"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="social-img"
+              src="./assets/images/youtube.png"
+              alt="Youtube Channel of Angelly"
+          /></a>
+          <a
+            class="social-link"
+            href="https://www.instagram.com/_chubbyyy.bearrr.96_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="social-img"
+              src="./assets/images/instagram.png"
+              alt="Instagram of Angelly"
+          /></a>
+        </div>
+      </section>
+      <section class="about-section">
+        <div id="about-me-title-container">
+          <img
+            class="img-sections"
+            id="about-me-img"
+            src="./assets/logo/about-me.svg"
+            alt="User Icon for About Me section"
+          />
+          <h2>About Me</h2>
+        </div>
+        <div id="about-me-text-container">
+          <p>
+            I'm a Software Developer with over 6 years of experience, passionate
+            about web design and development, creating beautiful and
+            user-friendly web experiences.
+          </p>
+        </div>
+        <div id="about-me-skills-container">
+          <div class="about-me-skill" id="clean-code-skill">
+            <img
+              class="about-me-skill-img"
+              src="./assets/logo/clean-code.svg"
+              alt="Clean Code skill logo"
+            />
+            <p>Clean Code</p>
+          </div>
+          <div class="about-me-skill" id="responsive-skill">
+            <img
+              class="about-me-skill-img"
+              src="./assets/logo/responsive.svg"
+              alt="All devices logo for Responsive skill"
+            />
+            <p>Responsive</p>
+          </div>
+          <div class="about-me-skill" id="problem-solver-skill">
+            <img
+              class="about-me-skill-img"
+              src="./assets/logo/problem-solver.svg"
+              alt="The light logo for Problem Solver skill"
+            />
+            <p>Problem Solver</p>
+          </div>
+        </div>
+      </section>
+      <section class="skills-section">
+        <div id="skills-section-title">
+          <img
+            class="img-sections"
+            src="./assets/logo/skills.svg"
+            alt="Chart icon for My Skills section"
+          />
+          <h2>My Skills</h2>
+        </div>
+        <div id="skills-list">
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/html.png"
+              alt="HTML 5 logo"
+            />
+            <p>HTML</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/css-3.png"
+              alt="CSS 3 logo"
+            />
+            <p>CSS</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/js.png"
+              alt="JavaScript logo"
+            />
+            <p>JavaScript</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/react.png"
+              alt="ReactJS logo "
+            />
+            <p>React</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/tailwind-css.png"
+              alt="Tailwind CSS logo"
+            />
+            <p>Tailwind CSS</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg"
+              alt="Python language logo"
+            />
+            <p>Python</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/figma.png"
+              alt="Figma logo"
+            />
+            <p>Figma</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/git.png"
+              alt="Git - Gitlab logo"
+            />
+            <p>Git/GitLab</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/cicd.png"
+              alt="Upload image for CICD logo"
+            />
+            <p>CI/CD</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/testing.png"
+              alt="Testing logo for All testing types"
+            />
+            <p>ST/UT/FT</p>
+          </div>
+          <div class="skills-item">
+            <img
+              class="skills-img"
+              src="./assets/images/c-.png"
+              alt="C++ logo"
+            />
+            <p>C++</p>
+          </div>
+        </div>
+      </section>
+      <section class="projects-section">
+        <div id="projects-section-title">
+          <div id="projects-title-container">
+            <img
+              class="img-sections"
+              src="./assets/logo/projects.svg"
+              alt="Folder icon for Feature Projects section"
+            />
+            <h2>Feature Projects</h2>
+          </div>
+          <a href="#" id="view-all-btn">View All &rarr;</a>
+        </div>
+        <div class="projects-list" id="projectsList">
+          <article class="project-item">
+            <a
+              href="https://kyduyennguyen.github.io/frontendmentor/advice-generator-app-main/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="project-img"
+                src="./assets/images/advice-generator-app.png"
+                alt="Shortcut of Advice generator app"
+            /></a>
+            <div class="project-text">
+              <a
+                href="https://github.com/kyduyennguyen/frontendmentor/tree/main/advice-generator-app-main"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><h3>Advice Generator App</h3></a
+              >
+              <p>
+                A modern advice generator app that delivers random motivational
+                quotes with a simple, elegant user experience and responsive
+                interface.
+              </p>
+            </div>
+            <div class="project-skills">
+              <span class="project-skill-item">HTML</span>
+              <span class="project-skill-item">CSS</span>
+              <span class="project-skill-item">JavaScript</span>
+              <span class="project-skill-item">API</span>
+            </div>
+          </article>
+          <article class="project-item">
+            <a
+              href="https://github.com/kyduyennguyen/frontendmentor/tree/main/grid-landing-page-main"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="project-img"
+                src="./assets/images/grid-landing-page.png"
+                alt="Shortcut of Grid Landing Page"
+            /></a>
+            <div class="project-text">
+              <a
+                href="https://kyduyennguyen.github.io/frontendmentor/grid-landing-page-main/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><h3>Grid Landing Page</h3></a
+              >
+              <p>
+                Modern nonprofit landing page with a strong editorial layout,
+                bold typography, and informative stat cards to highlight impact
+                and mission.
+              </p>
+            </div>
+            <div class="project-skills">
+              <span class="project-skill-item">HTML</span>
+              <span class="project-skill-item">CSS</span>
+            </div>
+          </article>
+          <article class="project-item">
+            <a
+              href="https://www.frontendmentor.io/solutions/age-calculator-app-XQuWG87j3J"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="project-img"
+                src="./assets/images/age-calculator-app.png"
+                alt="Shortcut of Age Calculator App"
+            /></a>
+            <div class="project-text">
+              <a
+                href="https://kyduyennguyen.github.io/frontendmentor/age-calculator-app-main/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><h3>Age Calculator App</h3></a
+              >
+              <p>
+                Interactive age calculator with a clean form layout and instant
+                results in years, months, and days.
+              </p>
+            </div>
+            <div class="project-skills">
+              <span class="project-skill-item">HTML</span>
+              <span class="project-skill-item">CSS</span>
+              <span class="project-skill-item">JavaScript</span>
+            </div>
+          </article>
+          <article class="project-item">
+            <a
+              href="https://github.com/kyduyennguyen/frontendmentor/tree/main/3-column-preview-card-component-main"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="project-img"
+                src="./assets/images/3-column-preview.png"
+                alt="Shortcut of Three Column Preview Card page"
+            /></a>
+            <div class="project-text">
+              <a
+                href="https://kyduyennguyen.github.io/frontendmentor/3-column-preview-card-component-main/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><h3>3-Column Preview Card</h3></a
+              >
+              <p>
+                A clean three-column car showcase landing page designed to
+                present vehicle categories with strong visual hierarchy and
+                conversion-focused call-to-action buttons.
+              </p>
+            </div>
+            <div class="project-skills">
+              <span class="project-skill-item">HTML</span>
+              <span class="project-skill-item">CSS</span>
+            </div>
+          </article>
+          <article class="project-item">
+            <a
+              href="https://github.com/kyduyennguyen/frontendmentor/tree/main/interactive-rating-component-main"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="project-img"
+                src="./assets/images/interactive-rating.png"
+                alt="Shortcut of Interactive Rating page"
+            /></a>
+            <div class="project-text">
+              <a
+                href="https://kyduyennguyen.github.io/frontendmentor/interactive-rating-component-main/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><h3>Interactive Rating Page</h3></a
+              >
+              <p>
+                Interactive rating card with a responsive design and user
+                feedback flow, built to collect ratings in a simple and engaging
+                way.
+              </p>
+            </div>
+            <div class="project-skills">
+              <span class="project-skill-item">HTML</span>
+              <span class="project-skill-item">CSS</span>
+              <span class="project-skill-item">JavaScript</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="contacts-section">
+        <img
+          class="img-sections"
+          id="contact-img"
+          src="./assets/logo/contact-me.svg"
+          alt="Mail icon for Contact Me section"
+        />
+        <div id="contact-text">
+          <h2>Let's Work Together</h2>
+          <p>Have a project in mind? I'd love to hear from you.</p>
+        </div>
+        <button id="contact-btn">Get In Touch</button>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 Angelly Nguyen - All rights reserved.</p>
+    </footer>
+  </body>
+</html>
