@@ -300,9 +300,11 @@ body {
 .skills-section {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem 20rem;
+  gap: 1.25rem;
+  padding: 2rem clamp(1rem, 5vw, 20rem);
   max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
   border-bottom: 0.1rem solid var(--primary-color);
 }
 
@@ -319,19 +321,28 @@ body {
 
 #skills-list {
   display: flex;
-  gap: 1rem; /* Spacing between icons */
-  overflow-x: auto;
+  gap: 1rem;
+  overflow-x: hidden;
   overflow-y: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
   padding-bottom: 0.75rem;
   margin: 0 1rem;
+  align-items: stretch;
   scroll-behavior: smooth;
-  -ms-overflow-style: none; /* Hide scoll in IE/Edge */
-  scrollbar-width: none; /* Hide scoll in Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#skills-listt.auto-marquee {
+  animation: project-marquee 26s linear infinite;
 }
 
 #skills-list::-webkit-scrollbar {
-  height: 0.375rem; /* Height of the horizontal scrollbar */
-  display: none; /* Hide scoll in Chrome/Safari */
+  height: 0.375rem;
+  display: none;
 }
 
 #skills-list::-webkit-scrollbar-track {
@@ -352,36 +363,48 @@ body {
 .skills-item {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  flex: 0 0 auto; /* IMPORTANT: Prevents items from being compressed (shrink) */
-  width: 5rem; /* Fixes the width of each item */
-  scroll-snap-align: start; /* Scroll stop point (paired with scroll-snap-type above) */
+  flex: 0 0 auto;
+  width: 9rem;
+  min-height: 9rem;
+  padding: 1rem 0.75rem;
+  border-radius: 0.9rem;
+  background-color: #e7efe9;
+  border: 0.1rem solid var(--secondary-color);
+  scroll-snap-align: start;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .skills-item:hover {
-  transform: translateY(-0.25rem); /* Scales item on hover */
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.25rem 0.75rem rgba(51, 104, 160, 0.12);
 }
 
 .skills-img {
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0.9rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.02);
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .skills-item p {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--text-color);
   text-align: center;
-  white-space: nowrap; /* Prevents text from breaking if the name is long */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Displays an ellipsis (...) if the text is too long */
+  text-overflow: ellipsis;
   width: 100%;
 }
 
