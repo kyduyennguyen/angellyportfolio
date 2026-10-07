@@ -1,4 +1,4 @@
-const autoScrollTargets = ["projectsList", "skills-list"];
+const autoScrollTargets = ["projectsList", "skillsList"];
 
 autoScrollTargets.forEach((id) => {
   const container = document.getElementById(id);
@@ -7,19 +7,33 @@ autoScrollTargets.forEach((id) => {
     return;
   }
 
-  const scrollSpeed = id === "skills-list" ? 0.5 : 0.8;
+  const originalChildren = Array.from(container.children);
+
+  if (originalChildren.length && !container.dataset.duplicated) {
+    originalChildren.forEach((child) => {
+      const clone = child.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      container.appendChild(clone);
+    });
+
+    container.dataset.duplicated = "true";
+  }
+
+  const scrollSpeed = id === "skillsList" ? 0.6 : 0.9;
 
   const tick = () => {
-    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const loopWidth = container.scrollWidth / 2;
 
-    if (maxScrollLeft > 0) {
+    if (loopWidth > 0) {
       container.scrollLeft += scrollSpeed;
 
-      if (container.scrollLeft >= maxScrollLeft) {
+      if (container.scrollLeft >= loopWidth - 1) {
         container.scrollLeft = 0;
       }
     }
+
+    requestAnimationFrame(tick);
   };
 
-  setInterval(tick, 16);
+  requestAnimationFrame(tick);
 });

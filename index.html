@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' https://s3.dualstack.us-east-2.amazonaws.com; script-src 'self' 'unsafe-inline' http://127.0.0.1:* http://localhost:*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://s3.dualstack.us-east-2.amazonaws.com data:; connect-src 'self' http://127.0.0.1:* http://localhost:*;"
+    />
     <!-- Styles Links-->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles/mainstyles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -153,7 +157,7 @@
           />
           <h2>My Skills</h2>
         </div>
-        <div id="skills-list">
+        <div class="skills-list" id="skillsList">
           <div class="skills-item">
             <img
               class="skills-img"
@@ -412,7 +416,10 @@
         />
         <div id="contact-text">
           <h2>Let's Work Together</h2>
-          <p>Have a project in mind? I'd love to hear from you.</p>
+          <p>
+            Have a project in mind?<br />
+            I'd love to hear from you.
+          </p>
         </div>
         <button id="contact-btn">Get In Touch</button>
       </section>
