@@ -304,7 +304,7 @@ body {
 .skills-list {
   display: flex;
   gap: 1rem;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
   max-width: 100%;
@@ -316,22 +316,54 @@ body {
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
 }
 
 .skills-list::-webkit-scrollbar {
-  height: 0.375rem;
-  display: none;
+  height: 0.25rem;
+  width: 0.25rem;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    height 0.25s ease;
 }
 
 .skills-list::-webkit-scrollbar-track {
-  background: rgba(51, 104, 160, 0.08);
+  background: transparent;
   border-radius: 60rem;
 }
 
 .skills-list::-webkit-scrollbar-thumb {
-  background: rgba(51, 104, 160, 0.25);
+  background: rgba(51, 104, 160, 0.1);
   border-radius: 60rem;
-  transition: background-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.skills-section:hover .skills-list,
+.skills-section:focus-within .skills-list,
+.skills-section .skills-list.dragging,
+.skills-list.is-hovered {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(51, 104, 160, 0.55) transparent;
+}
+
+.skills-section:hover .skills-list::-webkit-scrollbar,
+.skills-section:focus-within .skills-list::-webkit-scrollbar,
+.skills-section .skills-list.dragging::-webkit-scrollbar,
+.skills-list.is-hovered::-webkit-scrollbar {
+  opacity: 1;
+  height: 0.375rem;
+}
+
+.skills-section:hover .skills-list::-webkit-scrollbar-thumb,
+.skills-section:focus-within .skills-list::-webkit-scrollbar-thumb,
+.skills-section .skills-list.dragging::-webkit-scrollbar-thumb,
+.skills-list.is-hovered::-webkit-scrollbar-thumb {
+  background: rgba(51, 104, 160, 0.25);
 }
 
 .skills-item {
@@ -423,7 +455,7 @@ body {
 .projects-list {
   display: flex;
   gap: 0.75rem; /* Spacing between project cards */
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
   max-width: 100%;
@@ -434,28 +466,55 @@ body {
   align-items: stretch;
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* Hide scoll in IE/Edge */
-  scrollbar-width: none; /* Hide scoll in Firefox */
+  scrollbar-width: none; /* Hide by default in Firefox */
+  scrollbar-color: transparent transparent;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
 }
 
 .projects-list::-webkit-scrollbar {
-  height: 0.375rem;
-  display: none;
-}
-
-.projects-list::-webkit-scrollbar {
-  height: 0.375rem; /* Height of the horizontal scrollbar */
-  display: none; /* Hide scoll in Chrome/Safari */
+  height: 0.25rem;
+  width: 0.25rem;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    height 0.25s ease;
 }
 
 .projects-list::-webkit-scrollbar-track {
-  background: rgba(51, 104, 160, 0.08);
+  background: transparent;
   border-radius: 60rem;
 }
 
 .projects-list::-webkit-scrollbar-thumb {
-  background: rgba(51, 104, 160, 0.25);
+  background: rgba(51, 104, 160, 0.1);
   border-radius: 60rem;
-  transition: background-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.projects-section:hover .projects-list,
+.projects-section:focus-within .projects-list,
+.projects-section .projects-list.dragging,
+.projects-list.is-hovered {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(51, 104, 160, 0.55) transparent;
+}
+
+.projects-section:hover .projects-list::-webkit-scrollbar,
+.projects-section:focus-within .projects-list::-webkit-scrollbar,
+.projects-section .projects-list.dragging::-webkit-scrollbar,
+.projects-list.is-hovered::-webkit-scrollbar {
+  opacity: 1;
+  height: 0.375rem;
+}
+
+.projects-section:hover .projects-list::-webkit-scrollbar-thumb,
+.projects-section:focus-within .projects-list::-webkit-scrollbar-thumb,
+.projects-section .projects-list.dragging::-webkit-scrollbar-thumb,
+.projects-list.is-hovered::-webkit-scrollbar-thumb {
+  background: rgba(51, 104, 160, 0.25);
 }
 
 .project-item {
