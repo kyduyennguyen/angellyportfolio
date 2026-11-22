@@ -3,38 +3,41 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const assetPath = (path) => `${basePath}${path}`;
+
 const skills = [
   {
     name: "HTML",
-    image: "/assets/images/html.png",
+    image: assetPath("/assets/images/html.png"),
     alt: "HTML 5 logo",
     width: 512,
     height: 512,
   },
   {
     name: "CSS",
-    image: "/assets/images/css-3.png",
+    image: assetPath("/assets/images/css-3.png"),
     alt: "CSS 3 logo",
     width: 512,
     height: 512,
   },
   {
     name: "JavaScript",
-    image: "/assets/images/js.png",
+    image: assetPath("/assets/images/js.png"),
     alt: "JavaScript logo",
     width: 512,
     height: 512,
   },
   {
     name: "React",
-    image: "/assets/images/react.png",
+    image: assetPath("/assets/images/react.png"),
     alt: "React logo",
     width: 512,
     height: 512,
   },
   {
     name: "Tailwind CSS",
-    image: "/assets/images/tailwind-css.png",
+    image: assetPath("/assets/images/tailwind-css.png"),
     alt: "Tailwind CSS logo",
     width: 640,
     height: 640,
@@ -49,35 +52,35 @@ const skills = [
   },
   {
     name: "Figma",
-    image: "/assets/images/figma.png",
+    image: assetPath("/assets/images/figma.png"),
     alt: "Figma logo",
     width: 512,
     height: 512,
   },
   {
     name: "Git/GitLab",
-    image: "/assets/images/git.png",
+    image: assetPath("/assets/images/git.png"),
     alt: "Git and GitLab logo",
     width: 512,
     height: 512,
   },
   {
     name: "CI/CD",
-    image: "/assets/images/cicd.png",
+    image: assetPath("/assets/images/cicd.png"),
     alt: "CI/CD logo",
     width: 512,
     height: 512,
   },
   {
     name: "ST/UT/FT",
-    image: "/assets/images/testing.png",
+    image: assetPath("/assets/images/testing.png"),
     alt: "Software testing logo",
     width: 512,
     height: 512,
   },
   {
     name: "C++",
-    image: "/assets/images/c-.png",
+    image: assetPath("/assets/images/c-.png"),
     alt: "C++ logo",
     width: 512,
     height: 512,
@@ -87,7 +90,7 @@ const skills = [
 const projects = [
   {
     name: "Advice Generator App",
-    image: "/assets/images/advice-generator-app.png",
+    image: assetPath("/assets/images/advice-generator-app.png"),
     alt: "Advice Generator App preview",
     width: 2872,
     height: 1554,
@@ -101,7 +104,7 @@ const projects = [
   },
   {
     name: "Grid Landing Page",
-    image: "/assets/images/grid-landing-page.png",
+    image: assetPath("/assets/images/grid-landing-page.png"),
     alt: "Grid Landing Page preview",
     width: 2872,
     height: 1554,
@@ -115,7 +118,7 @@ const projects = [
   },
   {
     name: "Age Calculator App",
-    image: "/assets/images/age-calculator-app.png",
+    image: assetPath("/assets/images/age-calculator-app.png"),
     alt: "Age Calculator App preview",
     width: 2482,
     height: 1458,
@@ -129,7 +132,7 @@ const projects = [
   },
   {
     name: "3-Column Preview Card",
-    image: "/assets/images/3-column-preview.png",
+    image: assetPath("/assets/images/3-column-preview.png"),
     alt: "Three Column Preview Card page",
     width: 2530,
     height: 1444,
@@ -143,7 +146,7 @@ const projects = [
   },
   {
     name: "Interactive Rating Page",
-    image: "/assets/images/interactive-rating.png",
+    image: assetPath("/assets/images/interactive-rating.png"),
     alt: "Interactive Rating page preview",
     width: 2418,
     height: 1458,
@@ -160,22 +163,22 @@ const projects = [
 const socialLinks = [
   {
     name: "LinkedIn",
-    image: "/assets/images/linkedin.png",
+    image: assetPath("/assets/images/linkedin.png"),
     href: "https://www.linkedin.com/in/duyen-dk-nguyen/",
   },
   {
     name: "GitHub",
-    image: "/assets/images/github.png",
+    image: assetPath("/assets/images/github.png"),
     href: "https://github.com/kyduyennguyen",
   },
   {
     name: "YouTube",
-    image: "/assets/images/youtube.png",
+    image: assetPath("/assets/images/youtube.png"),
     href: "https://www.youtube.com/channel/UCYmO6rZYrL7GKY2WAYrFTAg",
   },
   {
     name: "Instagram",
-    image: "/assets/images/instagram.png",
+    image: assetPath("/assets/images/instagram.png"),
     href: "https://www.instagram.com/_chubbyyy.bearrr.96_/",
   },
 ];
@@ -330,7 +333,9 @@ export default function HomePage() {
           >
             <img
               className="h-10 w-10"
-              src={`/assets/logo/${menuOpen ? "close-menu" : "hamburger-menu"}.svg`}
+              src={assetPath(
+                `/assets/logo/${menuOpen ? "close-menu" : "hamburger-menu"}.svg`,
+              )}
               alt=""
             />
           </button>
@@ -384,7 +389,7 @@ export default function HomePage() {
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.25 }}
             className="h-52 w-52 rounded-full object-cover shadow-[0_0_1.75rem_rgba(51,104,160,0.4)] sm:h-64 sm:w-64"
-            src="/assets/images/angelly-portrait.jpeg"
+            src={assetPath("/assets/images/angelly-portrait.jpeg")}
             alt="Angelly's portrait"
           />
         </div>
@@ -424,7 +429,10 @@ export default function HomePage() {
         {...reveal}
         className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-4 border-b border-primary px-5 py-10 sm:px-8 md:grid-cols-[auto_1fr]"
       >
-        <SectionHeading image="/assets/logo/about-me.svg" alt="About me icon">
+        <SectionHeading
+          image={assetPath("/assets/logo/about-me.svg")}
+          alt="About me icon"
+        >
           About Me
         </SectionHeading>
         <p className="px-2 py-3 leading-7 tracking-wide md:px-8 text-lg">
@@ -457,7 +465,7 @@ export default function HomePage() {
             >
               <img
                 className="h-10 w-10"
-                src={`/assets/logo/${item.image}`}
+                src={assetPath(`/assets/logo/${item.image}`)}
                 alt=""
               />
               <p>{item.name}</p>
@@ -471,7 +479,10 @@ export default function HomePage() {
         {...reveal}
         className="mx-auto flex max-w-7xl flex-col gap-5 border-b border-primary px-5 py-10 sm:px-8"
       >
-        <SectionHeading image="/assets/logo/skills.svg" alt="Skills icon">
+        <SectionHeading
+          image={assetPath("/assets/logo/skills.svg")}
+          alt="Skills icon"
+        >
           My Skills
         </SectionHeading>
         <AutoScrollRow
@@ -506,7 +517,10 @@ export default function HomePage() {
         className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-10 sm:px-8"
       >
         <div className="flex items-center justify-between gap-4">
-          <SectionHeading image="/assets/logo/projects.svg" alt="Projects icon">
+          <SectionHeading
+            image={assetPath("/assets/logo/projects.svg")}
+            alt="Projects icon"
+          >
             Feature Projects
           </SectionHeading>
           <a
@@ -579,7 +593,7 @@ export default function HomePage() {
         <div className="flex flex-col items-center justify-center gap-5 sm:flex-row sm:justify-between mx-16">
           <img
             className="h-14 w-14 rounded-2xl sm:h-16 sm:w-16"
-            src="/assets/logo/contact-me.svg"
+            src={assetPath("/assets/logo/contact-me.svg")}
             alt="Contact me logo"
           />
           <div className="flex flex-col gap-2 tracking-wide">
