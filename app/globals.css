@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&family=Playfair+Display:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2efe7;
+  color: #3368a0;
+  font-family: "Lato", sans-serif;
+}
+
+::selection {
+  background: #c8dfdb;
+  color: #3368a0;
+}
+
+.horizontal-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+}
